@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/forest"
+        android:elevation="4dp"
+        app:theme="@style/ToolbarIconColor"
+        app:titleTextColor="#FFFFFF"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/btn_gil"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textColor="@color/forest"
+            android:layout_gravity="center"
+            android:text="둘레길"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/btn_food"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textColor="@color/forest"
+            android:layout_gravity="center"
+            android:text="저당 식품"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/btn_checkBG"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textColor="@color/forest"
+            android:layout_gravity="center"
+            android:text="혈당 기록"/>
+
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+</LinearLayout>
