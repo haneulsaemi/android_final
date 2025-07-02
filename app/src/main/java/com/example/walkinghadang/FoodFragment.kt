@@ -29,7 +29,7 @@ class FoodFragment : Fragment() {
     private var param2: String? = null
     private var _binding: FragmentFoodBinding? = null
     private val binding get() = _binding!!
-    private val apiKey = "jbGHJMq1TOHOzoWuOUcatgnyzGotAsC4yLEGOdHKw3GGF2RHmcgtdwINtemfO+7hzBtF/fysjVsDm1+GGUU5nQ=="
+    private val apiKey = "api-key"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
