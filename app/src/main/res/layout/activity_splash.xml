@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#8ADD90"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:id="@+id/splashIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_blood_drop"
+        android:contentDescription="@string/app_name"
+        />
+
+    <TextView
+        android:id="@+id/splashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="워킹하당"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#010102"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/splashSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="혈당 · 식단 · 산책길 관리"
+        android:textSize="16sp"
+        android:textColor="@color/mediumGray"
+        android:layout_marginTop="8dp" />
+
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:indeterminate="true"
+        android:visibility="visible" />
+
+</LinearLayout>

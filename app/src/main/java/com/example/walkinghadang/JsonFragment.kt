@@ -45,23 +45,33 @@ class JsonFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding = FragmentJsonBinding.inflate(inflater, container, false)
-        val gilNm = arguments?.getString("gilNm") ?: "수락산"
+        val gilNm = arguments?.getString("gilNm")
+        val lvCd = arguments?.getString("lvCd")
+        val reqTm = arguments?.getString("reqTm")
 
-        val call: Call<JsonResponse> = RetrofitConnection.jsonNetworkService.getJsonList(
+        val call: Call<JsonResponse> = RetrofitConnection.jsonSeoulApiService.getJsonList(
             "67764568767373613836584a447979",
             "json",
             "viewGil",
             1,
-            5,
-            gilNm
+            100
         )
 
         call?.enqueue(object:Callback<JsonResponse>{
             override fun onResponse(call: Call<JsonResponse>, response: Response<JsonResponse>) {
                 if(response.isSuccessful){
+                    var rows = response.body()?.viewGil?.row ?: mutableListOf()
+                    val filteredRows = rows.filter {
+                        when {
+                            !gilNm.isNullOrEmpty() -> it.GIL_NM.contains(gilNm, ignoreCase = true)
+                            !lvCd.isNullOrEmpty() -> it.LV_CD.contains(lvCd, ignoreCase = true)
+                            !reqTm.isNullOrEmpty() -> it.REQ_TM.contains(reqTm, ignoreCase = true)
+                            else -> true
+                        }
+                    }.toMutableList()
                     Log.d(TAG,"${response.body()}")
                     binding.jsonRecyclerView.layoutManager = LinearLayoutManager(activity)
-                    binding.jsonRecyclerView.adapter = JsonAdapter(response.body()!!.viewGil.row)
+                    binding.jsonRecyclerView.adapter = JsonAdapter(filteredRows.toMutableList())
                     binding.jsonRecyclerView.addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
                 }else{
                     Log.d(TAG, "${response}")

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="식품명"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#2E7D32"/>
+
+    <TextView
+        android:id="@+id/tv_kcal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="열량: 0kcal"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tv_sugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="당류: 0g"
+        android:textSize="14sp"/>
+</LinearLayout>

@@ -7,7 +7,7 @@ class RetrofitConnection {
 
     companion object{
         private const val BASE_URL = "http://openapi.seoul.go.kr:8088/";
-        var jsonNetworkService : NetworkService
+        var jsonSeoulApiService : SeoulApiService
         val jsonRetrofit : Retrofit
             get() = Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -15,7 +15,7 @@ class RetrofitConnection {
                 .build()
 
         init{
-            jsonNetworkService = jsonRetrofit.create(NetworkService::class.java)
+            jsonSeoulApiService = jsonRetrofit.create(SeoulApiService::class.java)
         }
     }
 }

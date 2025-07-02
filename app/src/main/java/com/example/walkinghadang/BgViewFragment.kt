@@ -43,10 +43,12 @@ class BcViewFragment : Fragment() {
 
         var datas = mutableListOf<String>()
         var db = DBHelper(inflater.context).readableDatabase
-        val cursor = db.rawQuery("select * from BLOODGLO_TB", null);
+        val cursor = db.rawQuery("SELECT * FROM BLOODGLU_TB", null)
         cursor.run{
             while(moveToNext()){
-                datas.add(cursor.getString(1))
+                val time = cursor.getString(cursor.getColumnIndexOrThrow("time"))
+                val level = cursor.getInt(cursor.getColumnIndexOrThrow("level"))
+                datas.add("[$time] 혈당: ${level}mg/dL")
             }
         }
         db.close()

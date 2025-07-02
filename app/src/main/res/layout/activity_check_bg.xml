@@ -24,6 +24,21 @@
         android:orientation="vertical"
         android:layout_margin="20dp"
         >
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_blood_drop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="혈당 수치를 기록하세요"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:textColor="#555555"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,22 +62,33 @@
             android:id="@+id/bg_level"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="혈당"
-            >
+            android:hint="혈당 (mg/dL)"
+            android:layout_marginTop="16dp">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/bg_level_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
         <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✔ 저장하기"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"/>
+        <TextView
+            android:id="@+id/last_record_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_save"
-            style="@style/Widget.MaterialComponents.Button"
-            android:backgroundTint="#4CAF50"
-            android:layout_gravity="right"
-            android:text="저장"/>
+            android:text="최근 기록 없음"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 
 

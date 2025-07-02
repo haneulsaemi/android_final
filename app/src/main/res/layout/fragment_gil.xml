@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FAFAFA"
+    tools:context=".GilViewActivity">
+
+    <!-- 상단 타이틀 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서울 둘레길 검색"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#2E7D32"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp" />
+
+    <!-- 검색 입력 필드 -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="검색할 길 이름 (예: 수락산)"
+        app:boxStrokeColor="#66BB6A"
+        app:boxBackgroundMode="outline"
+        android:layout_marginBottom="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtLoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 검색 옵션과 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <RadioGroup
+            android:id="@+id/rGroup"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbGil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="길명"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/rbLvl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="레벨" />
+
+            <RadioButton
+                android:id="@+id/rbTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시간" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="검색"
+            android:textAllCaps="false"
+            android:backgroundTint="#66BB6A"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- 결과 프래그먼트 표시 영역 -->
+    <FrameLayout
+        android:id="@+id/activity_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#E8F5E9"
+        android:elevation="2dp" />
+</LinearLayout>
